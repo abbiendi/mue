@@ -225,7 +225,8 @@ MCpara::MCpara(ifstream & input_file, bool debug): MCpara() {
 void MCpara::InitandSetRunParams_mesmer(char* input_mesmer) {
 
   //Mesmer initialization
-  init_mesmer(input_mesmer);
+  int ierr = init_mesmer(input_mesmer);
+  if (ierr !=0) cout<<"*** WARNING: MESMER initialisation error, ierr = "<<ierr <<endl;
   
   char mesmerversion[21];
   char hostname[21];
@@ -252,6 +253,11 @@ void MCpara::InitandSetRunParams_mesmer(char* input_mesmer) {
 
   // printout the input parameters
   Print();
+
+  if (ierr != 0) {
+    cout << "*** ERROR: MESMER initialisation error, ierr = "<<ierr <<endl;
+    std::exit(250);
+  }
 } 
 
 void MCpara::Print() const {

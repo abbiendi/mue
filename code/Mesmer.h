@@ -1,7 +1,7 @@
 #ifndef Mesmer_H
 #define Mesmer_H
 
-extern "C" void init_mesmer(char* inputdatacard);
+extern "C" int init_mesmer(char* inputdatacard);
 
 extern "C" void mesmer_setup
 (int* sampletag,
