@@ -8,7 +8,7 @@ then
     mkdir ${gendir}
     cd ${gendir}
     echo "Installing MESMER at directory: " ${gendir} 
-    git clone https://github.com/cm-cc/mesmer.git .
+    git clone https://github.com/cm-cc/mesmer.git -b v1.1.0 
     make
 else
     cd ${gendir}
